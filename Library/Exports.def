@@ -1,0 +1,9 @@
+EXPORTS
+	EnableScroll
+	DisableScroll
+	ScrollLines
+	SetCtrlKey
+	SetWheelButton
+
+SECTIONS
+	.shared READ WRITE SHARED
