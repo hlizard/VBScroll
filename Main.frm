@@ -4,14 +4,14 @@ Begin VB.Form frmMain
    ClientHeight    =   5415
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   3615
+   ClientWidth     =   4110
    Icon            =   "Main.frx":0000
    LinkTopic       =   "Form1"
    LockControls    =   -1  'True
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   5415
-   ScaleWidth      =   3615
+   ScaleWidth      =   4110
    ShowInTaskbar   =   0   'False
    Visible         =   0   'False
    Begin VBScroll.XPFrame xfrCtrlKey 
@@ -19,8 +19,8 @@ Begin VB.Form frmMain
       Left            =   120
       TabIndex        =   10
       Top             =   1920
-      Width           =   3375
-      _ExtentX        =   5953
+      Width           =   4080
+      _ExtentX        =   7197
       _ExtentY        =   3625
       Caption         =   "Ctrl key"
       Begin VB.OptionButton optCtrlKey 
@@ -30,7 +30,7 @@ Begin VB.Form frmMain
          Left            =   120
          TabIndex        =   15
          Top             =   1680
-         Width           =   2535
+         Width           =   3135
       End
       Begin VB.OptionButton optCtrlKey 
          Caption         =   "scroll procedures (code view)"
@@ -39,7 +39,7 @@ Begin VB.Form frmMain
          Left            =   120
          TabIndex        =   14
          Top             =   1320
-         Width           =   2655
+         Width           =   3135
       End
       Begin VB.OptionButton optCtrlKey 
          Caption         =   "perform horizontal scrolling"
@@ -48,7 +48,7 @@ Begin VB.Form frmMain
          Left            =   120
          TabIndex        =   13
          Top             =   960
-         Width           =   2175
+         Width           =   3135
       End
       Begin VB.OptionButton optCtrlKey 
          Caption         =   "ignore keystroke"
@@ -57,23 +57,23 @@ Begin VB.Form frmMain
          Left            =   120
          TabIndex        =   12
          Top             =   600
-         Width           =   1575
+         Width           =   3135
       End
       Begin VB.Image imgCtrlKey 
          Height          =   480
-         Left            =   2760
+         Left            =   3360
          Picture         =   "Main.frx":1CFA
          Top             =   240
          Width           =   480
       End
       Begin VB.Label lblCtrlKey 
          AutoSize        =   -1  'True
-         Caption         =   "When Ctrl key is pressed:"
-         Height          =   195
+         Caption         =   "When Shift key is pressed:"
+         Height          =   180
          Left            =   120
          TabIndex        =   11
          Top             =   240
-         Width           =   1800
+         Width           =   2340
       End
    End
    Begin VB.CommandButton cmdOk 
@@ -99,17 +99,17 @@ Begin VB.Form frmMain
       Left            =   120
       TabIndex        =   16
       Top             =   4080
-      Width           =   3375
-      _ExtentX        =   5953
+      Width           =   4080
+      _ExtentX        =   7197
       _ExtentY        =   1085
       Caption         =   "Startup"
       Begin VB.OptionButton optCurrentUser 
          Caption         =   "Current user"
          Height          =   255
-         Left            =   1140
+         Left            =   1320
          TabIndex        =   18
          Top             =   240
-         Width           =   1215
+         Width           =   1455
       End
       Begin VB.OptionButton optAllUsers 
          Caption         =   "All users"
@@ -117,12 +117,12 @@ Begin VB.Form frmMain
          Left            =   120
          TabIndex        =   17
          Top             =   240
-         Width           =   975
+         Width           =   1215
       End
       Begin VB.OptionButton optManual 
          Caption         =   "Manual"
          Height          =   255
-         Left            =   2400
+         Left            =   2760
          TabIndex        =   19
          Top             =   240
          Width           =   855
@@ -133,8 +133,8 @@ Begin VB.Form frmMain
       Left            =   120
       TabIndex        =   0
       Top             =   120
-      Width           =   3375
-      _ExtentX        =   5953
+      Width           =   4080
+      _ExtentX        =   7197
       _ExtentY        =   2990
       Caption         =   "Wheel"
       Begin VB.ComboBox cmbAction 
@@ -190,7 +190,7 @@ Begin VB.Form frmMain
       End
       Begin VB.Image imgWheel 
          Height          =   480
-         Left            =   2760
+         Left            =   3360
          Picture         =   "Main.frx":25D8
          Top             =   240
          Width           =   480

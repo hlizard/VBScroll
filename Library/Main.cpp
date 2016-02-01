@@ -45,6 +45,18 @@ HWND GetScrollBar(HWND parent, long position)
 	return NULL ;
 }
 
+BOOL IsMouseCloseToVScrollBar(POINT p, RECT r)	//by ding
+{
+	if(p.x > r.left - 25 && p.y > r.top + 25 && p.y < r.bottom - 25)
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
 LRESULT CALLBACK GetMsgProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
 	if (nCode != HC_ACTION || wParam != PM_NOREMOVE)
@@ -65,9 +77,15 @@ LRESULT CALLBACK GetMsgProc(int nCode, WPARAM wParam, LPARAM lParam)
 		{
 			HWND scrollBar = NULL ;
 			long windowMessage = WM_VSCROLL ;
+			RECT r ;	//by ding
+			GetWindowRect(GetScrollBar(thisWindow, SBS_VERT), &r) ;
+			if(IsMouseCloseToVScrollBar(((MSG*)lParam)->pt, r))
+			{
+				windowMessage = WM_HSCROLL ;
+			}
 			short scrollDelta = (short)HIWORD(((MSG*)lParam)->wParam) ;
 
-			if (GetAsyncKeyState(VK_CONTROL) & 0x80000000)
+			if (GetAsyncKeyState(VK_SHIFT) & 0x80000000)	//if (GetAsyncKeyState(VK_CONTROL) & 0x80000000)	//by ding
 			{
 				switch (controlKey)
 				{
@@ -75,8 +93,18 @@ LRESULT CALLBACK GetMsgProc(int nCode, WPARAM wParam, LPARAM lParam)
 					scrollBar = GetScrollBar(thisWindow, SBS_VERT) ;
 				break ;
 				case 1:
-					scrollBar = GetScrollBar(thisWindow, SBS_HORZ) ;
-					windowMessage = WM_HSCROLL ;
+					//scrollBar = GetScrollBar(thisWindow, SBS_HORZ) ;	//by ding
+					//windowMessage = WM_HSCROLL ;
+					if(windowMessage == WM_HSCROLL)
+					{
+						scrollBar = GetScrollBar(thisWindow, SBS_VERT) ;
+						windowMessage = WM_VSCROLL;
+					}
+					else
+					{
+						scrollBar = GetScrollBar(thisWindow, SBS_HORZ) ;
+						windowMessage = WM_HSCROLL;
+					}
 				break ;
 				case 2:
 					BYTE keyCode ;
