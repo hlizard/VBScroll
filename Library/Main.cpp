@@ -61,7 +61,8 @@ LRESULT CALLBACK GetMsgProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
 	if (nCode != HC_ACTION || wParam != PM_NOREMOVE)
 	{
-		return CallNextHookEx(messageHook, nCode, wParam, lParam) ;
+		//return CallNextHookEx(messageHook, nCode, wParam, lParam) ;	//by ding
+		return 0;
 	}
 
 	long getMessage = ((MSG*)lParam)->message ;
@@ -189,7 +190,8 @@ LRESULT CALLBACK GetMsgProc(int nCode, WPARAM wParam, LPARAM lParam)
 		}
 	}
 
-	return CallNextHookEx(messageHook, nCode, wParam, lParam) ;
+	//return CallNextHookEx(messageHook, nCode, wParam, lParam) ;	//by ding
+	return 0;
 }
 
 HHOOK WINAPI EnableScroll()
