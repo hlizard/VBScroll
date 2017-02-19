@@ -5,3 +5,5 @@ VBScroll solves the problem with mouse wheel scrolling in Visual Basic IDE and V
 VBScroll is OSI Certified Open Source Software and is distributed under GNU General Public License (GPL).
 
 Program requires Visual C and Visual Basic run-time files. 
+
+Win10 works!
